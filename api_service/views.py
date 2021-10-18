@@ -321,7 +321,7 @@ def _fetch_known_faces_encodings():
         t = _json_to_np(fe.face_enc)
         fenc.append(t)
         kf_info = {"kf_id": fe.id, "first_name": fe.user.first_name,
-                   "last_name": fe.user.last_name, "user_id": fe.user.id}
+                   "last_name": fe.user.last_name, "user_id": fe.user.id, "im_b64": fe.photo}
         face_info.append(kf_info)
     return fenc, face_info
 

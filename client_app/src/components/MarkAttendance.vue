@@ -39,7 +39,8 @@ marking in case of a group of people.
         <p>Out of about {{result.fcount}} clearly visible faces in the photo, following were identified:</p>
         <ul>
           <li v-for="(nm, idx) in result.names_found" :key="nm">
-            {{idx+1}}: {{nm.first_name}}, {{nm.last_name}} , {{nm.user_id}}
+
+            <span>{{idx+1}}: {{nm.first_name}}, {{nm.last_name}} , {{nm.user_id}}<img :src="nm.im_b64" class="card-img-top"></span>
           </li>
         </ul>
       </div>
