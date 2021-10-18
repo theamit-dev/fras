@@ -7,7 +7,7 @@ Home screen.
 <template>
   <div class="container">
     <p class="lead">
-      Face Recognition based Attentance System.
+      DRISHTI (Face Recognition System)
     </p>
     Please proceed by choosing a menu item from the top bar.
   </div>

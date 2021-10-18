@@ -15,7 +15,7 @@ View for holding attendance details.
             <div class="col-md-1">S#</div>
             <div class="col">First Name</div>
             <div class="col">Last Name</div>
-            <div class="col">Attended Date</div>
+            <div class="col">Verified Date</div>
           </div>
         </div>
         <div class="card-body">

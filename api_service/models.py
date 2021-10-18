@@ -52,7 +52,7 @@ class BaseModel(Model):
 class User(BaseModel):
     login_id = TextField(unique=True)
     password_hashed = TextField()
-    email = TextField(unique=True)
+    email = TextField(unique=False)
     first_name = CharField(null=True)
     last_name = CharField(null=True)
     is_locked = FixedCharField(max_length=1, default="N")

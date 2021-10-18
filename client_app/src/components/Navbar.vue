@@ -6,7 +6,7 @@ Component for the application's navigation bar.
 <template>
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" v-bind:class=" { 'navbarOpen': show }">
-      <a class="navbar-brand" href="#/">FRAS</a>
+      <a class="navbar-brand" href="#/">DRISHTI</a>
       <button
         class="navbar-toggler"
         type="button"

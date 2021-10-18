@@ -168,7 +168,7 @@ def mark_faces(image, face_loc):
 
             # Draw a label with a name below the face
             # cv2.rectangle(image, (left, bottom - 35),
-                        # (right, bottom), (0, 0, 255), cv2.FILLED)
+            # (right, bottom), (0, 0, 255), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(image, str(idx+1), (left - 15, bottom + 30),
                         font, 1.0, (0, 0, 255), 2)

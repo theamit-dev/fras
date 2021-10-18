@@ -61,11 +61,14 @@ def _error_json(obj):
 
 
 def _save_entity(ent):
+    print(ent)
     curr_user = _logged_in_user()
     ent.txn_login_id = curr_user.login_id if curr_user else "None"
     ent.upd_ts = DT.now()
     ent.ins_ts = DT.now()
+    print("save entity")
     ent.save()
+
 
 
 def _update_entity(Ent, obj, exclude=None):
@@ -256,6 +259,7 @@ def _process_photos_zip(zip_file):
                       if x.lower().endswith(".jpg") and "MACOSX" not in x]
             logging.debug("ZIP file {0} contains {1} items.".format(
                 zip_file, len(zitems)))
+            count = 0
             for zn in zitems:
                 try:
                     logging.debug("Extracting JPG from ZIP entry: "+str(zn))
@@ -267,17 +271,23 @@ def _process_photos_zip(zip_file):
                                 "Photo not found in ZIP entry: {}".format(zn))
                             continue
                         # login_id.jpg
+
+                        zn=zn.replace("abc/","")
                         login_id = zn.split(".")[0]
+                        print("login" + login_id)
                         kf = KnownFace()
                         u = User.select().where(User.login_id == login_id)
+                        print("U=" + u)
                         kf.user = u
                         fenc = fapi.get_face_encoding(photo)
                         kf.face_enc = _np_to_json(fenc)
                         kf.photo = "{0}{1}".format(B64_HDR,
                                                    base64.b64encode(photo).decode())
+                        print("hello1")
 
                         _save_entity(kf)
                         recs += 1
+
                 except Exception as ex:
                     logging.exception("Error when processing photo. "+str(ex))
 
@@ -425,6 +435,7 @@ def users_upload():
             with open(file_path, newline='') as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
+                    print(row)
                     login_id = row["LOGIN_ID"]
                     fname = row["FIRST_NAME"]
                     lname = row["LAST_NAME"]
@@ -438,6 +449,7 @@ def users_upload():
         return _ok_json("Users added successfully!")
 
     except Exception as ex:
+        print(ex)
         msg = "Error when handling users upload request."
         logging.exception(msg)
         return _error_json(msg)

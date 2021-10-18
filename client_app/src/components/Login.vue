@@ -40,7 +40,7 @@ Login view.
       </div>
       <div class="col-md-8">
         <p class="lead">
-          Face Recognition Based Attendance System.
+          DRISHTI (Face Recognition System)
         </p>
       </div>
     </div>

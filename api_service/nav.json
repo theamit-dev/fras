@@ -18,15 +18,15 @@
         "menu": "Manage Users"
     },
     {
-        "label": "View Attendance",
+        "label": "View Verified",
         "href": "#/att.detail",
         "roles": "*",
-        "menu": "Attendance"
+        "menu": "Face Recognition"
     },
     {
-        "label": "Mark Attendance",
+        "label": "Verifiy Face",
         "href": "#/att.mark",
         "roles": "ST,SU",
-        "menu": "Attendance"
+        "menu": "Face Recognition"
     }
 ]
